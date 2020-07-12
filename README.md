@@ -1,8 +1,10 @@
-### Olá, sou o Leandro Cavalcante
+# Olá, sou o Leandro Cavalcante
+
+![](./cover.jpg)
 
 Sou **desenvolvedor frontend** web na cidade de **São Paulo - SP/Brasil**, com experiência em **React e Angular**. Gosto de trabalhar com **TypeScript** e **JavaScript** (ES6+), além de **HTML** e **CSS**. Já atuei como FullStack, acumulando experiência em *.NET* e *PHP*, mas sou apaixonado por interfaces e interações.
 
-Realizei trabalhos para empresas como **Portal R7 - Rede Record**, **Serasa Experian** e **Lojas Riachuelo**, atualmente ocupando posição de desenvolvedor sênior.
+Realizei trabalhos para empresas como **Portal R7 - Rede Record**, **Serasa Experian** e **Lojas Riachuelo**, atualmente ocupando posição de **desenvolvedor sênior**.
 
 #### Onde me encontrar
 
