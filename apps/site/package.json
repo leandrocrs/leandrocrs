@@ -5,6 +5,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "dependencies": {
-    "gatsby": "*"
-  }
+    "gatsby": "*",
+    "gatsby-plugin-image": "*"
+  },
+  "devDependencies": {}
 }

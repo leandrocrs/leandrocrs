@@ -18,17 +18,33 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "parallel": 1
       }
     }
   },
-  "projects": {
-    "site": {
-      "tags": []
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/gatsby"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
     },
-    "site-e2e": {
-      "tags": [],
-      "implicitDependencies": ["site"]
+    "@nrwl/gatsby": {
+      "application": {
+        "style": "styled-components"
+      }
     }
-  }
+  },
+  "defaultProject": "site"
 }
