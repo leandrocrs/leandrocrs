@@ -1,6 +1,6 @@
 # Olá, sou o Leandro Cavalcante
 
-![Capa](./src/images/cover.jpg)
+![Capa](./cover.jpg)
 
 Sou **desenvolvedor frontend** web na cidade de **São Paulo - SP/Brasil**, com experiência em **React e Angular**. Gosto de trabalhar com **TypeScript** e **JavaScript** (ES6+), além de **HTML** e **CSS**. Já atuei como FullStack, acumulando experiência em _.NET_ e _PHP_, mas sou apaixonado por interfaces e interações.
 

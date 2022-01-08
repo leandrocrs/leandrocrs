@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `site`,
     description: `This is a gatsby application created by Nx.`,
+    siteUrl: 'https://leandrocrs.me'
   },
   plugins: [
     'gatsby-plugin-styled-components',
