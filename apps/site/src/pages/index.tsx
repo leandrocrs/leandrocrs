@@ -1,234 +1,110 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import { helmetJsonLdProp } from 'react-schemaorg';
+import { Person } from 'schema-dts';
 import styled from 'styled-components';
 
-import { ReactComponent as Logo } from './logo.svg';
-import star from './star.svg';
-
 const StyledApp = styled.div`
-  /*
- * Remove template code below
- */
-
   font-family: sans-serif;
   min-width: 300px;
   max-width: 600px;
   margin: 50px auto;
 
-  .gutter-left {
-    margin-left: 9px;
+  address {
+    display: inline;
   }
 
-  .col-span-2 {
-    grid-column: span 2;
-  }
-
-  .flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  header {
-    background-color: #143055;
-    color: white;
-    padding: 5px;
-    border-radius: 3px;
-  }
-
-  main {
-    padding: 0 36px;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  h1 {
-    text-align: center;
-    margin-left: 18px;
-    font-size: 24px;
-  }
-
-  h2 {
-    text-align: center;
-    font-size: 20px;
-    margin: 40px 0 10px 0;
-  }
-
-  .resources {
-    text-align: center;
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-gap: 9px;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .resource {
-    color: #0094ba;
-    height: 36px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    padding: 3px 9px;
-    text-decoration: none;
-  }
-
-  .resource:hover {
-    background-color: rgba(68, 138, 255, 0.04);
-  }
-
-  pre {
-    padding: 9px;
-    border-radius: 4px;
-    background-color: black;
-    color: #eee;
-  }
-
-  details {
-    border-radius: 4px;
-    color: #333;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    padding: 3px 9px;
-    margin-bottom: 9px;
-  }
-
-  summary {
-    outline: none;
-    height: 36px;
-    line-height: 36px;
-  }
-
-  .github-star-container {
-    margin-top: 12px;
-    line-height: 20px;
-  }
-
-  .github-star-container a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-  }
-
-  .github-star-badge {
-    color: #24292e;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding: 3px 10px;
-    border: 1px solid rgba(27, 31, 35, 0.2);
-    border-radius: 3px;
-    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
-    margin-left: 4px;
-    font-weight: 600;
-  }
-
-  .github-star-badge:hover {
-    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
-    border-color: rgba(27, 31, 35, 0.35);
-    background-position: -0.5em;
-  }
-  .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
+  .cover {
+    position: relative;
   }
 `;
 
 export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./site.styled-components file.
-   */
   return (
     <StyledApp>
-      <header className="flex">
-        <Logo width="75" height="75" />
-        <h1>Welcome to site!</h1>
+      <Helmet
+        script={[
+          helmetJsonLdProp<Person>({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Leandro Cavalcante',
+            alternateName: 'leandrocrs',
+            alumniOf: {
+              '@type': 'CollegeOrUniversity',
+              name: [
+                'Faculdade de Tecnologia da Zona Leste',
+                'Escola Técnica de Guaianases',
+              ],
+            },
+            image: 'https://leandrocrs.me/cover.jpg',
+            sameAs: [
+              'https://github.com/leandrocrs',
+              'https://medium.com/@leandrocrs',
+              'https://dev.to/leandrocr',
+              'https://www.linkedin.com/in/leandrocrs/',
+            ],
+            address: 'São Paulo - Brazil',
+            description: 'Desenvolvedor Frontend em São Paulo, Brasil',
+            url: 'https://leandrocrs.me',
+            knowsAbout: [
+              'Frontend Web Development',
+              'React',
+              'Angular',
+              'Typescript',
+              'Javascript',
+              'HTML',
+              'CSS',
+            ],
+          }),
+        ]}
+      >
+        <meta charSet="utf-8" />
+        <title>
+          Leandro Cavalcante - desenvolvedor frontend em São Paulo, Brasil.
+        </title>
+        <link rel="canonical" href="https://leandrocrs.me/" />
+      </Helmet>
+      <header>
+        <h1>Olá, sou o Leandro Cavalcante!</h1>
       </header>
+      {/* <figure>
+        <img className="cover" src="/cover.jpg" alt="" />
+      </figure> */}
       <main>
-        <h2>Resources &amp; Tools</h2>
-        <p>Thank you for using and showing some ♥ for Nx.</p>
-        <div className="flex github-star-container">
-          <a
-            href="https://github.com/nrwl/nx"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {' '}
-            If you like Nx, please give it a star:
-            <div className="github-star-badge">
-              <img src={star} className="material-icons" alt="" />
-              Star
-            </div>
-          </a>
-        </div>
-        <p>Here are some links to help you get started.</p>
-        <ul className="resources">
-          <li className="col-span-2">
-            <a
-              className="resource flex"
-              href="https://connect.nrwl.io/app/courses/nx-workspaces/intro"
-            >
-              Nx video course
+        <p>
+          Sou <strong>desenvolvedor frontend</strong> web na cidade de{' '}
+          <address>São Paulo - SP/Brasil</address>, com experiência em{' '}
+          <em>React</em> e <em>Angular</em>. Gosto de trabalhar com{' '}
+          <em>TypeScript</em> e <em>JavaScript</em>, além de <em>HTML</em>e{' '}
+          <em>CSS</em>. Já atuei como <em>FullStack</em>, acumulando experiência
+          em <em>.NET</em> e<em>PHP</em>, mas sou apaixonado por interfaces e
+          interações no <strong>frontend</strong>. Realizei trabalhos para
+          empresas como <em>Portal R7 - Rede Record</em>,{' '}
+          <em>Serasa Experian</em> e <em>Lojas Riachuelo</em>, atualmente
+          ocupando posição de <strong>desenvolvedor sênior</strong>.
+        </p>
+        <h2>Onde me encontrar?</h2>
+        <ul>
+          <li>
+            Blogs no{' '}
+            <a href="https://medium.com/@leandrocrs" rel="noopener noreferrer">
+              medium/@leandrocrs
+            </a>{' '}
+            e{' '}
+            <a href="https://dev.to/leandrocr" rel="noopener noreferrer">
+              dev.to/leandrocrs
             </a>
           </li>
-          <li className="col-span-2">
+          <li>
+            Currículo em{' '}
             <a
-              className="resource flex"
-              href="https://nx.dev/react/getting-started/what-is-nx"
+              href="https://www.linkedin.com/in/leandrocrs/"
+              rel="noopener noreferrer"
             >
-              Nx video tutorial
-            </a>
-          </li>
-          <li className="col-span-2">
-            <a
-              className="resource flex"
-              href="https://nx.dev/react/tutorial/01-create-application"
-            >
-              Interactive tutorial
-            </a>
-          </li>
-          <li className="col-span-2">
-            <a className="resource flex" href="https://connect.nrwl.io/">
-              <img
-                height="36"
-                alt="Nrwl Connect"
-                src="https://connect.nrwl.io/assets/img/CONNECT_ColorIcon.png"
-              />
-              <span className="gutter-left">Nrwl Connect</span>
+              linkedin/in/leandrocrs
             </a>
           </li>
         </ul>
-        <h2>Next Steps</h2>
-        <p>Here are some things you can do with Nx.</p>
-        <details open>
-          <summary>Add UI library</summary>
-          <pre>{`# Generate UI lib
-nx g @nrwl/react:lib ui
-
-# Add a component
-nx g @nrwl/react:component xyz --project ui`}</pre>
-        </details>
-        <details>
-          <summary>View dependency graph</summary>
-          <pre>{`nx dep-graph`}</pre>
-        </details>
-        <details>
-          <summary>Run affected commands</summary>
-          <pre>{`# see what's been affected by changes
-nx affected:dep-graph
-
-# run tests for current changes
-nx affected:test
-
-# run e2e tests for current changes
-nx affected:e2e
-`}</pre>
-        </details>
       </main>
     </StyledApp>
   );
