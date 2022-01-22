@@ -11,3 +11,4 @@ Realizei trabalhos para empresas como **Portal R7 - Rede Record**, **Serasa Expe
 - Blogs no [medium/@leandrocrs](https://medium.com/@leandrocrs) e [dev.to/leandrocrs](https://dev.to/leandrocrs)
 - Twitter em [twitter/@leandrocrs](https://twitter.com/leandrocrs)
 - Currículo em [linkedin/in/leandrocrs](https://www.linkedin.com/in/leandrocrs/)
+- Fotos de uso gratuito em [unsplash.com/@leandrocrs](https://unsplash.com/@leandrocrs)
