@@ -21,7 +21,7 @@
         "deploy": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "gh-pages -d apps/site/public -b gh-page"
+            "command": "gh-pages -d apps/site/public -r https://github.com/leandrocrs/leandrocrs.github.io.git -b main"
           }
         },
         "serve": {
