@@ -78,6 +78,21 @@
           "outputs": ["{options.outputFile}"]
         }
       }
+    },
+    "styles": {
+      "root": "libs/styles",
+      "sourceRoot": "libs/styles/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/styles/**/*.ts"]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }
