@@ -41,3 +41,4 @@ Thumbs.db
 /apps/site/node_modules
 /apps/site/public
 /apps/site/.cache
+node_modules
