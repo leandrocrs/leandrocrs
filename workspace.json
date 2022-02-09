@@ -32,13 +32,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/site/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/site/**/*.{ts,tsx,js,jsx}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/site"],
+          "outputs": [
+            "coverage/apps/site"
+          ],
           "options": {
             "jestConfig": "apps/site/jest.config.js",
             "passWithNoTests": true
@@ -67,9 +73,13 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/site-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/site-e2e/**/*.{js,ts}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         }
       }
     }
