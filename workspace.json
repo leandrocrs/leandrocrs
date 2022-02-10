@@ -1,6 +1,110 @@
 {
   "version": 2,
   "projects": {
+    "single-page-checkout": {
+      "root": "apps/single-page-checkout",
+      "sourceRoot": "apps/single-page-checkout/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:webpack",
+          "outputs": ["{options.outputPath}"],
+          "defaultConfiguration": "production",
+          "options": {
+            "compiler": "swc",
+            "outputPath": "dist/apps/single-page-checkout",
+            "index": "apps/single-page-checkout/src/index.html",
+            "baseHref": "/",
+            "main": "apps/single-page-checkout/src/main.tsx",
+            "polyfills": "apps/single-page-checkout/src/polyfills.ts",
+            "tsConfig": "apps/single-page-checkout/tsconfig.app.json",
+            "assets": [
+              "apps/single-page-checkout/src/favicon.ico",
+              "apps/single-page-checkout/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/single-page-checkout/src/environments/environment.ts",
+                  "with": "apps/single-page-checkout/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "single-page-checkout:build",
+            "hmr": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "single-page-checkout:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "apps/single-page-checkout/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/single-page-checkout"],
+          "options": {
+            "jestConfig": "apps/single-page-checkout/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "single-page-checkout-e2e": {
+      "root": "apps/single-page-checkout-e2e",
+      "sourceRoot": "apps/single-page-checkout-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/single-page-checkout-e2e/cypress.json",
+            "devServerTarget": "single-page-checkout:serve",
+            "tsConfig": "apps/single-page-checkout-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "single-page-checkout:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/single-page-checkout-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["single-page-checkout"]
+    },
     "site": {
       "root": "apps/site",
       "sourceRoot": "apps/site/src",
