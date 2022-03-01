@@ -1,61 +1,14 @@
+import { palette } from '@leandrocrs/styles';
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { helmetJsonLdProp } from 'react-schemaorg';
 import { Person } from 'schema-dts';
-import styled from 'styled-components';
-import { palette } from '@leandrocrs/styles';
-import { StaticImage } from 'gatsby-plugin-image';
-import { keyframes } from 'styled-components';
-
-const fadeInOut = keyframes`
-  0% {
-    opacity: 0%;
-  }
-
-  50% {
-    opacity: 100%;
-  }
-
-  100% {
-    opacity: 0%;
-  }
-`;
-
-const BlinkCursor = styled.span.attrs(() => ({
-  children: '_',
-  'aria-hidden': true,
-}))`
-  animation: ${fadeInOut} 1.5s ease-in-out infinite;
-  pointer-events: none;
-  user-select: none;
-`;
-
-const StyledApp = styled.div`
-  font-family: sans-serif;
-  min-width: 300px;
-  max-width: 600px;
-  margin: 50px auto;
-
-  a {
-    color: ${palette.mistyBlue};
-  }
-
-  a:hover {
-    color: ${palette.coral};
-  }
-
-  p {
-    line-height: 1.75;
-  }
-
-  ul li {
-    line-height: 1.75;
-  }
-`;
+import TemplateGlobal from '../templates/global';
 
 export function Index() {
   return (
-    <StyledApp>
+    <TemplateGlobal>
       <Helmet
         script={[
           helmetJsonLdProp<Person>({
@@ -99,11 +52,6 @@ export function Index() {
         <link rel="canonical" href="https://leandrocrs.me/" />
         <meta name="theme-color" content={palette.mistyBlue} />
       </Helmet>
-      <header>
-        <h1>
-          Olá, sou o Leandro Cavalcante! <BlinkCursor />
-        </h1>
-      </header>
       <main>
         <StaticImage
           src="../images/cover.jpg"
@@ -146,7 +94,7 @@ export function Index() {
           </li>
         </ul>
       </main>
-    </StyledApp>
+    </TemplateGlobal>
   );
 }
 
