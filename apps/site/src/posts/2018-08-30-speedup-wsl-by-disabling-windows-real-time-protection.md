@@ -5,6 +5,7 @@ date: 2018-08-30T00:01:54+00:00
 author: leandrw
 guid: https://leandrw.com.br/?p=886
 slug: /speedup-wsl-by-disabling-windows-real-time-protection/
+lang: en
 medium_post:
   - 'O:11:"Medium_Post":11:{s:16:"author_image_url";N;s:10:"author_url";N;s:11:"byline_name";N;s:12:"byline_email";N;s:10:"cross_link";N;s:2:"id";N;s:21:"follower_notification";N;s:7:"license";N;s:14:"publication_id";N;s:6:"status";N;s:3:"url";N;}'
 image: /images/posts/2018/08/1-Cb8wWHPg6h_bgN8P7cnULg-618x430.jpeg
@@ -30,8 +31,6 @@ Every time you try to access/read/write some file/folder, Windows Defender inter
 ![Ubuntu running inside WSL trying to update some packages behind Windows Real-time protection bad guy](../images/posts/2018/08/1-6FyyUhdUkfW77MDfC1BgUA.png)
 
 **\*Warning**: disabling Real-time Security may have some direct impact in yours personal security\*. Know what you are doing.
-
-<!--more-->
 
 # Adding WSL in the Windows Security's Exclusion List
 
@@ -64,8 +63,6 @@ So, let’s disable:
 1. Double-click the Turn off real-time protection setting and set the option to Enabled. Click OK.
 
 I’ve only tested superficially, but I can ensure a great performance speed up.
-
-> Disclaimer: I have plans to improve my English skill, but my willing to help is bigger than that.
 
 # References:
 

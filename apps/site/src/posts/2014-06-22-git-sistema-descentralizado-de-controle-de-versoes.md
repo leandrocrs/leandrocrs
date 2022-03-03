@@ -23,7 +23,7 @@ format: video
 https://www.youtube.com/watch?v=Gb76vWj9URM
 
 Entenda os principais conceitos do Git - o DVCS que mais cresce no mundo.
-<!--more-->
+
 
 Git Book em Português Brasil:
 <a href="http://git-scm.com/book/pt-br/" target="_blank" rel="noopener">http://git-scm.com/book/pt-br/</a>

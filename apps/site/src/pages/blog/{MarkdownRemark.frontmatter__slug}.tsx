@@ -1,6 +1,17 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import TemplateGlobal from '../../templates/global';
+import styled from 'styled-components';
+import { palette } from '@leandrocrs/styles';
+
+const Article = styled.article`
+  time {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    color: ${palette.tealGreen};
+  }
+`;
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -10,15 +21,12 @@ export default function Template({
 
   return (
     <TemplateGlobal title={frontmatter.title}>
-      <div className="blog-post-container">
-        <article className="blog-post">
+      <div>
+        <Article lang={frontmatter.lang || 'pt-br'}>
           <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </article>
+          <time>{frontmatter.date}</time>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </Article>
       </div>
     </TemplateGlobal>
   );
@@ -29,6 +37,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
+        lang
         slug
         title
       }

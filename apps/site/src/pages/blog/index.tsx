@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import PostLink from '../../components/post-link';
 import TemplateGlobal from '../../templates/global';
+import { palette } from '@leandrocrs/styles';
 import styled from 'styled-components';
 
 const PostContainer = styled.ul`
@@ -13,7 +14,12 @@ const PostContainer = styled.ul`
   padding-inline-start: 0px;
 
   li {
+    padding: 1rem 0;
     width: 100%;
+  }
+
+  li + li {
+    border-top: 1px solid ${palette.tealGreen};
   }
 
   h3 {

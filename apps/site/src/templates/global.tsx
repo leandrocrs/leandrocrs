@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { helmetJsonLdProp } from 'react-schemaorg';
 import { Person } from 'schema-dts';
 import styled, { keyframes } from 'styled-components';
+import SiteFooter from '../components/site-footer';
 import SiteMenu from '../components/site-menu';
 
 const fadeInOut = keyframes`
@@ -32,7 +33,7 @@ const BlinkCursor = styled.span.attrs(() => ({
 const StyledApp = styled.div`
   font-family: sans-serif;
   min-width: 300px;
-  max-width: 600px;
+  max-width: 680px;
   margin: 50px auto;
 
   a {
@@ -53,6 +54,17 @@ const StyledApp = styled.div`
 
   h1 {
     color: ${palette.mistyBlue};
+  }
+
+  blockquote {
+    font-style: italic;
+    font-size: 1.25rem;
+  }
+
+  figcaption {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    text-align: center;
   }
 `;
 
@@ -115,6 +127,7 @@ export function TemplateGlobal({
       </header>
       <SiteMenu />
       <main>{children}</main>
+      <SiteFooter />
     </StyledApp>
   );
 }

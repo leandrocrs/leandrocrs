@@ -21,7 +21,7 @@ format: video
 ---
 https://www.youtube.com/watch?v=Ai7BuJPEzDU
 
-Aprenda a iniciar um repositório Git localmente, adicionar, alterar, comitar, visualizar o status do repositório e o log de alterações de arquivos.<!--more-->
+Aprenda a iniciar um repositório Git localmente, adicionar, alterar, comitar, visualizar o status do repositório e o log de alterações de arquivos.
 
 Git Book em Português Brasil:
 <a href="http://git-scm.com/book/pt-br/" target="_blank" rel="noopener">http://git-scm.com/book/pt-br/</a>
