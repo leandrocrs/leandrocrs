@@ -24,7 +24,7 @@ format: video
 https://www.youtube.com/watch?v=e6wlzHwoT5o
 
 Aprenda a iniciar um repositório Git remoto com o GitHub, cloná-lo localmente, modificar um arquivo, sincronizá-lo com o servidor e obter as alterações do servidor. Veja como é utilizado o Git na IDE Eclipse.
-<!--more-->
+
 
 Git Book em Português Brasil:
 <a href="http://git-scm.com/book/pt-br" target="_blank" rel="noopener">http://git-scm.com/book/pt-br</a>

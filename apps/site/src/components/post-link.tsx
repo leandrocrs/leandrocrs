@@ -9,6 +9,19 @@ const Container = styled.div`
     display: inline-flex;
     justify-content: space-between;
   }
+
+  h3 {
+    flex-grow: 1;
+  }
+
+  time {
+    align-items: center;
+    color: #808080;
+    display: inline-flex;
+    font-size: 0.75rem;
+    justify-content: flex-end;
+    width: 200px;
+  }
 `;
 
 const PostLink = ({ post }) => (
