@@ -15,7 +15,10 @@
             "outputPath": "dist/apps/blog"
           },
           "configurations": {
-            "production": {}
+            "production": {},
+            "development": {
+              "outputPath": "apps/blog"
+            }
           }
         },
         "serve": {
@@ -28,8 +31,13 @@
             "production": {
               "buildTarget": "blog:build:production",
               "dev": false
+            },
+            "development": {
+              "buildTarget": "blog:build:development",
+              "dev": true
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "export": {
           "executor": "@nrwl/next:export",
@@ -39,9 +47,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/blog"],
+          "outputs": ["{workspaceRoot}/coverage/apps/blog"],
           "options": {
-            "jestConfig": "apps/blog/jest.config.js",
+            "jestConfig": "apps/blog/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -102,7 +110,7 @@
           }
         },
         "deploy": {
-          "executor": "@nrwl/workspace:run-commands",
+          "executor": "nx:run-commands",
           "options": {
             "command": "gh-pages -d apps/site/public -r https://github.com/leandrocrs/leandrocrs.github.io.git -b main"
           }
@@ -127,9 +135,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/site"],
+          "outputs": ["{workspaceRoot}/coverage/apps/site"],
           "options": {
-            "jestConfig": "apps/site/jest.config.js",
+            "jestConfig": "apps/site/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -177,5 +185,6 @@
       },
       "tags": []
     }
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

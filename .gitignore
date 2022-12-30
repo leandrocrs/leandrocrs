@@ -42,3 +42,6 @@ Thumbs.db
 /apps/site/public
 /apps/site/.cache
 node_modules
+
+# Next.js
+.next
